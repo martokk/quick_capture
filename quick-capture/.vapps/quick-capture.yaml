@@ -1,0 +1,9 @@
+# === SETTINGS ===
+
+# File to capture text to
+capture_file: '/media/martokk/FILES/Notes/__INBOX__/Inbox.md'
+
+# === GUI ===
+theme: DarkGrey15
+font: hack
+font_size: 14
