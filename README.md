@@ -31,7 +31,7 @@ Linux:
 make build
 ```
 
-Windows (Windows support not addded to Makefile yet):
+Windows (Windows support not added to Makefile yet):
 
 ```shell
 pyinstaller.exe quick_capture.py ^
