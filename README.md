@@ -1,1 +1,1 @@
-# quick_capture
+# quick-capture
