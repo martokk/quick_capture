@@ -8,9 +8,9 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+build_old/
 develop-eggs/
-dist/
+dist_old/
 downloads/
 eggs/
 .eggs/
@@ -126,3 +126,8 @@ dmypy.json
 .idea/
 
 venv-old/
+/build_linux/
+/build_win/
+/dist_linux/
+/dist_win/
+~/.local/share/applications/

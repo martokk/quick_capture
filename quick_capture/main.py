@@ -3,8 +3,8 @@ from typing import Union, Dict
 import yaml
 import PySimpleGUI as sg
 
-CONFIG_PATH_DEFAULT = Path('./quick-capture/.vapps/quick-capture.yaml')
-CONFIG_PATH_DOTFILE = Path(f'{str(Path.home())}/.vapps/quick-capture.yaml')
+CONFIG_PATH_DEFAULT = Path('./quick_capture/.vapps/quick_capture.yaml')
+CONFIG_PATH_DOTFILE = Path(f'{str(Path.home())}/.vapps/quick_capture.yaml')
 CONFIG_PATH = CONFIG_PATH_DOTFILE if CONFIG_PATH_DOTFILE.exists() else CONFIG_PATH_DEFAULT
 CONFIG_WARNING = not CONFIG_PATH_DOTFILE.exists()
 CONFIG = yaml.safe_load(open(CONFIG_PATH))
@@ -27,7 +27,7 @@ class QuickCapture:
         ]
 
         if CONFIG_WARNING:
-            warning = [sg.Text(text="WARNING! You are not using '~/.vapps/quick-capture.yaml dotfile'. See martokk/dotfiles to install.",
+            warning = [sg.Text(text="WARNING! You are not using '~/.vapps/quick_capture.yaml dotfile'. See martokk/dotfiles to install.",
                                text_color="orange")]
             layout.append(warning)
 
