@@ -1,33 +1,38 @@
 # quick_capture
 
 ## Summary
+
 quick_capture is a simple app to add a task/note to a local file.
 
 ## Usage
-The app can be triggered by keyboard shortcut (Meta+N). 
+
+The app can be triggered by keyboard shortcut (Meta+N).
 After entering your note and pressing Enter, your note is appended to the end of a local text file.
 
 Tip: Automatically sync local text file via Dropbox, Google Drive, etc.
 
-## Install/Run
-Run executable found in `/dist_linux/` folder
+## Install
 
-## Config
-Copy `/quick_capture/.vapps/quick_capture.yaml` to `~/.vapps/quick_capture.yaml`
+Builds from Source, Installs to Linux, Creates Binaries & Desktop files:
 
-## Build from source
-Linux:
-```shells
-pyinstaller quick_capture.py \
-	--onefile \
-	--windowed \
-	--paths=./quick_capture \
-	--icon=./quick_capture/resources/icon.png \
-	--workpath=./build_linux \
-	--distpath=./dist_linux
+```shell
+make install
 ```
 
-Windows:
+## Config
+
+Edit `~/.vapps/quick_capture.yaml` configuration dotfile.
+
+## Build from source
+
+Linux:
+
+```shell
+make build
+```
+
+Windows (Windows support not addded to Makefile yet):
+
 ```shell
 pyinstaller.exe quick_capture.py ^
 	--onefile ^
