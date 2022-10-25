@@ -1,14 +1,15 @@
+from typing import Any
+
 from pathlib import Path
-from typing import Any, Dict, Union
 
 import PySimpleGUI as sg
 import yaml
 
-CONFIG_PATH_DEFAULT = Path("./quick_capture/.vapps/quick_capture.yaml")
-CONFIG_PATH_DOTFILE = Path(f"{str(Path.home())}/.vapps/quick_capture.yaml")
-CONFIG_PATH = (
-    CONFIG_PATH_DOTFILE if CONFIG_PATH_DOTFILE.exists() else CONFIG_PATH_DEFAULT
-)
+PACKAGE_ROOT = Path(__file__)
+
+CONFIG_PATH_DEFAULT = PACKAGE_ROOT / ".vapps" / "quick_capture.yaml"
+CONFIG_PATH_DOTFILE = Path.home() / ".vapps" / "quick_capture.yaml"
+CONFIG_PATH = CONFIG_PATH_DOTFILE if CONFIG_PATH_DOTFILE.exists() else CONFIG_PATH_DEFAULT
 CONFIG_WARNING = not CONFIG_PATH_DOTFILE.exists()
 CONFIG = yaml.safe_load(open(CONFIG_PATH, encoding="utf-8"))
 
@@ -26,11 +27,7 @@ class QuickCapture:
     def main(self) -> None:
         sg.theme(THEME)
         layout: list[Any] = [
-            [
-                sg.Multiline(
-                    key="-IN-", enable_events=True, size=(60, 3), font=(FONT, FONT_SIZE)
-                )
-            ],
+            [sg.Multiline(key="-IN-", enable_events=True, size=(60, 3), font=(FONT, FONT_SIZE))],
         ]
 
         if CONFIG_WARNING:
@@ -71,7 +68,7 @@ class QuickCapture:
 
     @staticmethod
     def save_value_to_file(
-        value: Dict[str, str], file_path: Union[str, Path], append=True
+        value: dict[str, str], file_path: str | Path, append: bool = True
     ) -> None:
         with open(file_path, "a" if append else "w", encoding="utf-8") as file:
             # print(value['-IN-'])
