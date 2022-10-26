@@ -24,11 +24,11 @@ uninstall-poetry: ## Uninstall Poetry
 .PHONY: install-pyinstaller
 install-pyinstaller: ## Download and install PyInstaller
 	poetry run sudo apt install libpython3.10-dev -y
-	poetry add pyinstaller@latest pillow@latest
+	poetry add --group dev pyinstaller@latest pillow@latest
 
 .PHONY: remove-pyinstaller
 remove-pyinstaller: ## Uninstall PyInstaller
-	poetry add pyinstaller@latest pillow@latest
+	poetry remove --group dev pyinstaller@latest pillow@latest
 
 .PHONY: install-pre-commit-hooks
 install-pre-commit-hooks: ## Install Pre-Commit Git Hooks
@@ -50,8 +50,8 @@ install: ## Install Project Dependecies/Requirements from Poetry
 
 .PHONY: update-dev-deps
 update-dev-deps: ## Update dev dependecies to @latest version
-	poetry add -D bandit@latest darglint@latest "isort[colors]@latest" mypy@latest pre-commit@latest pydocstyle@latest pylint@latest pytest@latest pyupgrade@latest safety@latest coverage@latest coverage-badge@latest pytest-html@latest pytest-cov@latest
-	poetry add -D --allow-prereleases black@latest
+	poetry add --group dev  bandit@latest darglint@latest "isort[colors]@latest" mypy@latest pre-commit@latest pydocstyle@latest pylint@latest pytest@latest pyupgrade@latest safety@latest coverage@latest coverage-badge@latest pytest-html@latest pytest-cov@latest
+	poetry add --group dev  --allow-prereleases black@latest
 
 #-----------------------------------------------------------------------------------------
 # ORIGINAL INSTALLATION HOOKS
