@@ -54,7 +54,7 @@ coverage-badge = "^1.1.0"
 pytest-html = "^3.1.1"
 pytest-cov = "^4.0.0"
 types-pyyaml = "^6.0.12"
-pyinstaller = "^5.6.1"
+pyinstaller = "^5.8.0"
 pillow = "^9.2.0"
 
 [tool.black]
